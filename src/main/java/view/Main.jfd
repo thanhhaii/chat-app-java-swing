@@ -1,0 +1,480 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.7" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {comp panel1:::p:87:p, space :5:5:p, comp panel2:::p::p, space :5:5:p, comp panel3:::p::p}}"
+			"$verticalGroup": "par l {comp panel1:::p:813:p, comp panel2:::p::p, comp panel3:::p:806:p}"
+		} ) {
+			name: "this"
+			"title": "Chat App"
+			"resizable": false
+			"undecorated": true
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosing", "thisWindowClosing", true ) )
+			addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "thisKeyPressed", true ) )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panel1"
+				"background": new java.awt.Color( 48, 56, 65, 255 )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "label1"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/user.png" )
+					"background": new java.awt.Color( 48, 56, 65, 255 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "profileActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 50
+					"width": 70
+					"height": 70
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "logOut"
+					"background": &Color0 new java.awt.Color( 48, 56, 65, 255 )
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/logout.png" )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "logout", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 45
+					"height": 48
+					"x": 20
+					"y": 755
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "addFriend"
+					"background": #Color0
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/addFriend.png" )
+					"toolTipText": "Show request or find new friend"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "addFriendActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 45
+					"height": 48
+					"x": 20
+					"y": 380
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "chat"
+					"background": #Color0
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/chat.png" )
+					"toolTipText": "Show chat with friend or group"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "showChatActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 45
+					"height": 48
+					"x": 20
+					"y": 310
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "chatGroup"
+					"background": #Color0
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/friend.png" )
+					"toolTipText": "Chat Group"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "chatGroupActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 45
+					"height": 48
+					"x": 20
+					"y": 240
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "newGroupChat"
+					"background": #Color0
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/newGroupchat.png" )
+					"toolTipText": "New Group Chat"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "newGroupChatActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 45
+					"height": 48
+					"x": 20
+					"y": 450
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "changePassword"
+					"background": #Color0
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/changepassword.png" )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "changePasswordActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 45
+					"height": 48
+					"x": 20
+					"y": 690
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :::p, par l {seq {comp chatClient::::0:x, space :::p}, seq {comp tfSearch:::p:233:p, space :::p, comp btnSearch:::p:38:p, space :7::x}}}}"
+				"$verticalGroup": "par l {seq t {space :0:11:x, par l:::p {comp tfSearch:::::x, comp btnSearch:::::x}, space s:::p, comp chatClient:::p:746:p}}"
+			} ) {
+				name: "panel2"
+				"background": new java.awt.Color( 54, 62, 71, 255 )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "chatClient"
+					"background": new java.awt.Color( 54, 62, 71, 255 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					add( new FormComponent( "javax.swing.JList" ) {
+						name: "listChat"
+						"selectionMode": 0
+						"font": new java.awt.Font( "Segoe UI", 0, 20 )
+						"fixedCellHeight": 60
+						"background": new java.awt.Color( 54, 62, 71, 255 )
+						"foreground": new java.awt.Color( 255, 255, 255, 255 )
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"cursor": new java.awt.Cursor( 12 )
+						"selectionBackground": new java.awt.Color( 45, 50, 45, 255 )
+						auxiliary() {
+							"JavaCodeGenerator.variableModifiers": 1
+						}
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "listFriendMouseClicked", true ) )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "listGroupMouseClicked", true ) )
+					} )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "tfSearch"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnSearch"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/search.png" )
+					"background": new java.awt.Color( 54, 62, 71, 255 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnSearchActionPerformed", true ) )
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {comp panel4:::p::p, space :0:0:x}}"
+				"$verticalGroup": "par l {seq l {comp panel4:::p::p, space :0:0:x}}"
+			} ) {
+				name: "panel3"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {comp panel8:::p:696:p, comp panel5:::p:696:p, seq {space :98:98:p, comp panel9:::p::p}, comp panel6:::p:696:p}"
+					"$verticalGroup": "par l {seq {space :2:2:p, comp panel8:::p::p, space :8:8:p, comp panel5:::p:648:p, space :6:6:p, comp panel9:::p::p, space :8:8:p, comp panel6:::p::p, space ::9:x}}"
+				} ) {
+					name: "panel4"
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+						"$columnSpecs": "203dlu, labelcompgap, 101dlu, labelcompgap, 96dlu"
+						"$rowSpecs": "18dlu, linegap, 17dlu"
+					} ) {
+						name: "panel8"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "fullnamefriend"
+							"font": new java.awt.Font( "Segoe UI", 1, 20 )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "usernameFriend"
+							"visible": false
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 3
+							"gridY": 1
+						} )
+						add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+							name: "menuBar1"
+							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+								name: "menu2"
+								"text": "Edit group chat"
+								add( new FormComponent( "javax.swing.JMenuItem" ) {
+									name: "menuItem2"
+									"text": "Customize the chat"
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "EditGroupActionPerformed", true ) )
+								} )
+								add( new FormComponent( "javax.swing.JMenuItem" ) {
+									name: "menuItem3"
+									"text": "Add member"
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "addMemberActionPerformed", true ) )
+								} )
+								add( new FormComponent( "javax.swing.JMenuItem" ) {
+									name: "removeMember"
+									"text": "Remove member"
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "removeMemberActionPerformed", true ) )
+								} )
+								add( new FormComponent( "javax.swing.JMenuItem" ) {
+									name: "menuItem5"
+									"text": "Out group"
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "OutGroupActionPerformed", true ) )
+								} )
+							} )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 5
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "statusOnOff"
+							"font": new java.awt.Font( "Segoe UI", 0, 14 )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridY": 3
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+						name: "panel5"
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPane2"
+							add( new FormComponent( "javax.swing.JTextPane" ) {
+								name: "showChat"
+								"font": new java.awt.Font( "Segoe UI", 0, 16 )
+								"editable": false
+							} )
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+						"$columnSpecs": "default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default"
+						"$rowSpecs": "16dlu"
+					} ) {
+						name: "panel9"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "angryEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/angry.png" )
+							"cursor": &Cursor0 new java.awt.Cursor( 12 )
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 1
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "appleEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/apple.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 3
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "australiaEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/australia.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 5
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "bigSimleEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/big-smile.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 7
+							"gridY": 1
+							"hAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "cakeEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/cake.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 9
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "canadaEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/canada.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 11
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "cherryEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/cherry.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 13
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "confusedEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/confused.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 15
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "egyptEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/egypt.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 17
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "happyEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/happy.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 19
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "italyEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/italy.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 21
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "loveEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/love.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 23
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "madEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/mad.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 25
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "ninjaEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/ninja.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 27
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "orangeEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/orange.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 29
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "sadEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/sad.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 31
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "smileEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/smile.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 33
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "spainEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/spain.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 35
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "suspiciousEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/suspicious.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 37
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "swedenEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/sweden.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 39
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "ukEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/uk.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 41
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "unhappyEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/unhappy.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 43
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "usEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/us.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 45
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "vietnamEmoji"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/emoji/vietnam.png" )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EmojiMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 47
+							"gridY": 1
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+						"$columnSpecs": "352dlu, labelcompgap, 28dlu, labelcompgap, 28dlu"
+						"$rowSpecs": "28dlu"
+					} ) {
+						name: "panel6"
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "tfMessage"
+							"font": new java.awt.Font( "Segoe UI", 0, 16 )
+							addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "tfMessageKeyPressed", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 1
+							"gridY": 1
+							"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "button2"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/attach.png" )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "sendFileActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 3
+							"gridY": 1
+							"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+							"hAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "button1"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/send.png" )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "sendActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 5
+							"gridY": 1
+							"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+							"hAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+						} )
+					} )
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 40, 0 )
+			"size": new java.awt.Dimension( 1095, 845 )
+		} )
+	}
+}

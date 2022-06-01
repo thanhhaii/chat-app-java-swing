@@ -1,0 +1,90 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.7" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$rowSpecs": "101, 0, 43, 313, 37"
+			"$hGap": 5
+			"$vGap": 5
+			"$alignTop": true
+			"$alignLeft": true
+			"$columnSpecs": "398"
+		} ) {
+			name: "this"
+			"title": "Edit Group Chat"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+				name: "avatar"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "avatarGroup"
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "changeAvatarGroup"
+				"text": "Change Avatar Group"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseEntered", "changeAvatarMouseExited", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseExited", "changeColorMouseEntered", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "changeAvatarGroupMouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 1
+				"hAlign": 0
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+				"$columnSpecs": "105, 283"
+				"$rowSpecs": "32"
+				"$hGap": 5
+				"$vGap": 5
+				"$alignTop": true
+				"$alignLeft": true
+			} ) {
+				name: "panel1"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Name Group:"
+					"font": new java.awt.Font( "Segoe UI", 0, 16 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"hAlign": 4
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "nameGroup"
+					"font": new java.awt.Font( "Segoe UI", 0, 16 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 1
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 2
+				"vAlign": 0
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JList" ) {
+					name: "member"
+					"fixedCellHeight": 55
+					"font": new java.awt.Font( "Segoe UI", 0, 18 )
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 3
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+				"alignment": 2
+			} ) {
+				name: "panel2"
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "Save"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "saveChangeActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"text": "Close"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "closeFormActionPerformed", true ) )
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 4
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 240, 15 )
+			"size": new java.awt.Dimension( 400, 575 )
+		} )
+	}
+}

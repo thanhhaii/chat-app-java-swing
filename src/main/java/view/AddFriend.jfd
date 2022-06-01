@@ -1,0 +1,90 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.7" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {comp tabbedPane1::l:::x}"
+			"$verticalGroup": "par l {comp tabbedPane1::l:::x}"
+		} ) {
+			name: "this"
+			"title": "Friend"
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tabbedPane1"
+				"background": new java.awt.Color( 54, 62, 71, 255 )
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {comp scrollPane1::l::438:x, seq l {space :::p, comp comboBox1:::p:411:p, space ::21:x}}"
+					"$verticalGroup": "par l {seq t {space :p:14:p, comp comboBox1::::38:x, space s:::p, comp scrollPane1:::p:546:p}}"
+				} ) {
+					name: "panel1"
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane1"
+						add( new FormComponent( "javax.swing.JList" ) {
+							name: "list1"
+							"font": new java.awt.Font( "Segoe UI", 0, 18 )
+							"fixedCellHeight": 50
+							"fixedCellWidth": 10
+							"background": new java.awt.Color( 54, 62, 71, 255 )
+							"selectionBackground": new java.awt.Color( 48, 56, 65, 255 )
+							"foreground": new java.awt.Color( 255, 255, 255, 255 )
+							"selectionForeground": new java.awt.Color( 255, 255, 255, 255 )
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "list1MouseClicked", true ) )
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JComboBox" ) {
+						name: "comboBox1"
+						"cursor": new java.awt.Cursor( 12 )
+						"model": new javax.swing.DefaultComboBoxModel {
+							selectedItem: "Request I received"
+							addElement( "Request I received" )
+							addElement( "Request I send" )
+						}
+						"background": new java.awt.Color( 54, 62, 71, 255 )
+						"foreground": new java.awt.Color( 255, 255, 255, 255 )
+						addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "comboBox1ItemStateChanged", true ) )
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Friend request"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq t {space :p:28:p, par t {comp scrollPane2::::373:x, seq {comp findFriend::::308:x, space s:::p, comp button1:::p:47:p}}, space :p:37:p}}"
+					"$verticalGroup": "par l {seq l {space :p:26:p, par l:::p {comp findFriend:::::x, comp button1:::::x}, space s:::p, comp scrollPane2::::508:x, space :p:26:p}}"
+				} ) {
+					name: "panel2"
+					"background": new java.awt.Color( 48, 56, 65, 255 )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "findFriend"
+						"font": new java.awt.Font( "Segoe UI", 0, 18 )
+						"background": new java.awt.Color( 54, 62, 71, 255 )
+						"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button1"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/image/search.png" )
+						"background": new java.awt.Color( 48, 56, 65, 255 )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "searchActionPerformed", true ) )
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane2"
+						add( new FormComponent( "javax.swing.JList" ) {
+							name: "list2"
+							"fixedCellHeight": 40
+							"background": new java.awt.Color( 54, 62, 71, 255 )
+							"selectionBackground": new java.awt.Color( 48, 56, 65, 255 )
+							"foreground": new java.awt.Color( 255, 255, 255, 255 )
+							"selectionForeground": new java.awt.Color( 255, 255, 255, 255 )
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "list2MouseClicked", true ) )
+						} )
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Find new friends"
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 285, 25 )
+			"size": new java.awt.Dimension( 440, 680 )
+		} )
+	}
+}
+

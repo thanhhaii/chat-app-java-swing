@@ -1,0 +1,29 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.7" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :p:137:p, comp button1:::p:119:p, space ::142:x}, seq t {space ::106:x, comp label1:::p::p, space :p:96:p}}"
+			"$verticalGroup": "par l {seq l {space :p:93:p, comp button1:::p:61:p, space :p:36:p, comp label1:::p::p, space ::51:x}}"
+		} ) {
+			name: "this"
+			"title": "Server"
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Start Server"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Start server successfult"
+				"foreground": new java.awt.Color( 255, 51, 51, 255 )
+				"font": new java.awt.Font( "Segoe UI", 0, 20 )
+				"visible": false
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 195, 145 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
